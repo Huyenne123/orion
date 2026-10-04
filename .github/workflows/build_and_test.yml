@@ -32,11 +32,11 @@ jobs:
     - name: Install Theos
       uses: actions/checkout@v4
       with:
-        repository: theos/theos
+        repository: roothide/theos
         path: theos
         submodules: recursive
     - name: Build
       run: |
         cd orion
         DEVELOPER_DIR=/Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer \
-          make THEOS_PACKAGE_SCHEME="${{ matrix.package-scheme }}"
+          make THEOS_PACKAGE_SCHEME=roothide
